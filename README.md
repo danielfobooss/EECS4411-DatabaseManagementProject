@@ -15,5 +15,7 @@ db2 "query"  (ex: db "select count(*) as card from stl.purchase")
 db2expln -d stl -o output.plan -z \; -f some_query.sql
 
 ## Notes:
+
 add tag -g before tag -f to show a tree plan summary
+
 query.sql files must end with ;
