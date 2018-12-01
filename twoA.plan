@@ -1,0 +1,79 @@
+DB2 Universal Database Version 11.1, 5622-044 (c) Copyright IBM Corp. 1991, 2015
+Licensed Material - Program Property of IBM
+IBM DB2 Universal Database SQL and XQUERY Explain Tool
+
+******************** DYNAMIC ***************************************
+
+==================== STATEMENT ==========================================
+
+	Isolation Level          = Cursor Stability
+	Blocking                 = Block All Cursors
+	Query Optimization Class = 5
+
+	Partition Parallel       = No
+	Intra-Partition Parallel = No
+
+	SQL Path                 = "SYSIBM", "SYSFUN", "SYSPROC", "SYSIBMADM", 
+                                   "DANIFORT"
+
+
+Statement:
+  
+  select book# 
+  from stl.purchase 
+  where qnty > 5 and 
+  when > '01/01/2015' 
+
+
+Section Code Page = 1208
+
+Estimated Cost = 72343.460938
+Estimated Cardinality = 70334.937500
+
+Access Table Name = STL.PURCHASE  ID = 2,277
+|  #Columns = 1
+|  Skip Inserted Rows
+|  Avoid Locking Committed Data
+|  Currently Committed for Cursor Stability
+|  May participate in Scan Sharing structures
+|  Scan may start anywhere and wrap, for completion
+|  Fast scan, for purposes of scan sharing management
+|  Scan can be throttled in scan sharing management
+|  Relation Scan
+|  |  Prefetch: Eligible
+|  Lock Intents
+|  |  Table: Intent Share
+|  |  Row  : Next Key Share
+|  Sargable Predicate(s)
+|  |  #Predicates = 2
+|  |  Return Data to Application
+|  |  |  #Columns = 1
+Return Data Completion
+
+End of section
+
+
+Optimizer Plan:
+
+     Rows   
+   Operator 
+     (ID)   
+     Cost   
+           
+   70334.9 
+   RETURN  
+    ( 1)   
+   72343.5 
+     |     
+   70334.9 
+   TBSCAN  
+    ( 2)   
+   72343.5 
+     |       
+ 9.99804e+06 
+ Table:      
+ STL         
+ PURCHASE    
+
+
+
