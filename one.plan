@@ -1,0 +1,222 @@
+DB2 Universal Database Version 11.1, 5622-044 (c) Copyright IBM Corp. 1991, 2015
+Licensed Material - Program Property of IBM
+IBM DB2 Universal Database SQL and XQUERY Explain Tool
+
+******************** DYNAMIC ***************************************
+
+==================== STATEMENT ==========================================
+
+	Isolation Level          = Cursor Stability
+	Blocking                 = Block All Cursors
+	Query Optimization Class = 5
+
+	Partition Parallel       = No
+	Intra-Partition Parallel = No
+
+	SQL Path                 = "SYSIBM", "SYSFUN", "SYSPROC", "SYSIBMADM", 
+                                   "DANIFORT"
+
+
+Statement:
+  
+  select C.cust#, B.book#, B.price 
+  from stl.Customer C, stl.Purchase P, stl.Book B 
+  where C.cust# =P.cust# and P.book# =B.book# and B.genre ='Fantasy' 
+          and C.city ='Toronto' and 
+  when between '11/01/2013' and '12/31/2013' 
+
+
+Section Code Page = 1208
+
+Estimated Cost = 22230.632812
+Estimated Cardinality = 1364.534180
+
+Zigzag Join
+|  Zigzag Join Dimension 1
+|  No Payload In Probe 
+|  Access Table Name = STL.CUSTOMER  ID = 2,275
+|  |  #Columns = 1
+|  |  Skip Inserted Rows
+|  |  Avoid Locking Committed Data
+|  |  Currently Committed for Cursor Stability
+|  |  May participate in Scan Sharing structures
+|  |  Scan may start anywhere and wrap, for completion
+|  |  Fast scan, for purposes of scan sharing management
+|  |  Scan can be throttled in scan sharing management
+|  |  Relation Scan
+|  |  |  Prefetch: Eligible
+|  |  Lock Intents
+|  |  |  Table: Intent Share
+|  |  |  Row  : Next Key Share
+|  |  Sargable Predicate(s)
+|  |  |  #Predicates = 1
+|  |  |  Insert Into Integer Sorted Temp Table  ID = t1
+|  |  |  |  #Columns = 1
+|  |  |  |  #Sort Key Columns = 1
+|  |  |  |  |  Key 1: (Ascending)
+|  |  |  |  Sortheap Allocation Parameters:
+|  |  |  |  |  #Rows     = 4350.000000
+|  |  |  |  |  Row Width = 4
+|  Integer Sorted Temp Table Completion  ID = t1
+|  Access Temp Table  ID = t1
+|  |  Temporary Index Scan: Name = SYSTEM.TEMPORARY_INDEX_1 
+|  |  |  Random Access 
+|  |  |  Index Columns:
+|  |  |  |  1: Column 1 (Ascending)
+|  |  #Columns = 1
+|  |  #Key Columns = 1
+|  |  |  Start Key: Inclusive Value
+|  |  |  |  1: ? 
+|  |  |  Stop Key: End of Index
+|  |  Index-Only Access
+|  |  Index Prefetch: None
+|  Zigzag Join Dimension 2
+|  No Payload In Probe 
+|  Access Table Name = STL.BOOK  ID = 2,276
+|  |  #Columns = 2
+|  |  Skip Inserted Rows
+|  |  Avoid Locking Committed Data
+|  |  Currently Committed for Cursor Stability
+|  |  May participate in Scan Sharing structures
+|  |  Scan may start anywhere and wrap, for completion
+|  |  Fast scan, for purposes of scan sharing management
+|  |  Scan can be throttled in scan sharing management
+|  |  Relation Scan
+|  |  |  Prefetch: Eligible
+|  |  Lock Intents
+|  |  |  Table: Intent Share
+|  |  |  Row  : Next Key Share
+|  |  Sargable Predicate(s)
+|  |  |  #Predicates = 1
+|  |  |  Insert Into Integer Sorted Temp Table  ID = t2
+|  |  |  |  #Columns = 2
+|  |  |  |  #Sort Key Columns = 1
+|  |  |  |  |  Key 1: (Ascending)
+|  |  |  |  Sortheap Allocation Parameters:
+|  |  |  |  |  #Rows     = 4700.000000
+|  |  |  |  |  Row Width = 16
+|  Integer Sorted Temp Table Completion  ID = t2
+|  Access Temp Table  ID = t2
+|  |  Temporary Index Scan: Name = SYSTEM.TEMPORARY_INDEX_2 
+|  |  |  Random Access 
+|  |  |  Index Columns:
+|  |  |  |  1: Column 1 (Ascending)
+|  |  |  |  2: Column 2 (Include Column)
+|  |  #Columns = 2
+|  |  #Key Columns = 1
+|  |  |  Start Key: Inclusive Value
+|  |  |  |  1: ? 
+|  |  |  Stop Key: End of Index
+|  |  Index-Only Access
+|  |  Index Prefetch: None
+|  Zigzag Join Fact
+|  Access Table Name = STL.PURCHASE  ID = 2,277
+|  |  Index Scan:  Name = STL.PURCHASE_PK  ID = 1
+|  |  |  Regular Index (Not Clustered)
+|  |  |  Index Columns:
+|  |  |  |  1: CUST# (Ascending)
+|  |  |  |  2: BOOK# (Ascending)
+|  |  |  |  3: WHEN (Ascending)
+|  |  #Columns = 0
+|  |  Skip Inserted Rows
+|  |  Avoid Locking Committed Data
+|  |  Currently Committed for Cursor Stability
+|  |  #Key Columns = 3
+|  |  |  Start Key: Inclusive Value
+|  |  |  |  1: ? 
+|  |  |  |  2: ? 
+|  |  |  |  3: 2013-11-01 [GAP Inclusive Value]
+|  |  |  Stop Key: Inclusive Value
+|  |  |  |  1: ? 
+|  |  |  |  2: ? 
+|  |  |  |  3: 2013-12-31 [GAP Inclusive Value]
+|  |  Index-Only Access
+|  |  Index Prefetch: Sequential(1), Readahead
+|  |  Isolation Level: Uncommitted Read
+|  |  Lock Intents
+|  |  |  Table: Intent None
+|  |  |  Row  : None
+|  |  Sargable Index Predicate(s)
+|  |  |  Insert Into Integer Sorted Temp Table  ID = t3
+|  |  |  |  #Columns = 1
+|  |  |  |  #Sort Key Columns = 1
+|  |  |  |  |  Key 1: (Ascending)
+|  |  |  |  Sortheap Allocation Parameters:
+|  |  |  |  |  #Rows     = 1365.000000
+|  |  |  |  |  Row Width = 20
+|  |  |  |  Duplicate Elimination
+Integer Sorted Temp Table Completion  ID = t3
+List Prefetch Preparation
+|  Access Table Name = STL.PURCHASE  ID = 2,277
+|  |  #Columns = 2
+|  |  Skip Inserted Rows
+|  |  Avoid Locking Committed Data
+|  |  Currently Committed for Cursor Stability
+|  |  RID List Fetch Scan
+|  |  Fetch Using Prefetched List
+|  |  |  Prefetch: Eligible
+|  |  Lock Intents
+|  |  |  Table: Intent Share
+|  |  |  Row  : Next Key Share
+|  |  Sargable Predicate(s)
+|  |  |  #Predicates = 2
+|  |  |  Return Data to Application
+|  |  |  |  #Columns = 3
+Return Data Completion
+
+End of section
+
+
+Optimizer Plan:
+
+                     Rows   
+                   Operator 
+                     (ID)   
+                     Cost   
+                           
+                   1364.53 
+                   RETURN  
+                    ( 1)   
+                   22230.6 
+                     |  
+                      * 
+                     |     
+                   1364.53 
+                    FETCH  
+                    (--)   
+                   22229.8 
+                  /       \
+            1364.53  9.99804e+06 
+            RIDSCN   Table:      
+             ( 4)    STL         
+            22228.6  PURCHASE    
+              |     
+            1364.53 
+             SORT   
+             ( 5)   
+            22228.6 
+              |     
+            1364.53 
+            ZZJOIN  
+             ( 6)   
+             22228  
+    +--------++---------+
+     *        *          * 
+    |        |          |       
+   4350     4700    9.99804e+06 
+   TEMP     TEMP    Index:      
+   ( 8)     (11)    STL         
+  1074.63  646.871  PURCHASE_PK 
+    |        |     
+   4350     4700   
+  TBSCAN   TBSCAN  
+   ( 9)     (12)   
+  1074.32  646.545 
+    |        |    
+  100000   50000  
+ Table:    Table: 
+ STL       STL    
+ CUSTOMER  BOOK   
+
+
+
