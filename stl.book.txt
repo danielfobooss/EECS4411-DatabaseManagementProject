@@ -1,0 +1,100 @@
+ 
+ 
+
+BOOK#       LANGUAGE             GENRE                PUBLISHER                                PRICE  
+----------- -------------------- -------------------- ---------------------------------------- -------
+       9405 Arabic               Children's           Holier Than Thou                           58.38
+       1244 Arabic               Children's           Holier Than Thou                           45.20
+      17665 Arabic               Children's           Holier Than Thou                           37.66
+      36839 Arabic               Children's           Print More                                 24.48
+      14541 Arabic               Children's           Really Dumb Press                          25.42
+       4682 Arabic               Children's           Holier Than Thou                           48.96
+      44979 Arabic               Children's           Holier Than Thou                           52.73
+       9648 Arabic               Children's           Holier Than Thou                           41.43
+      26432 Arabic               Children's           Print More                                 30.13
+      47692 Arabic               Children's           Holier Than Thou                           39.55
+      30168 Arabic               Children's           Holier Than Thou                           56.50
+      10866 Arabic               Children's           Holier Than Thou                           50.85
+      45783 Arabic               Children's           Holier Than Thou                           48.96
+      39379 Arabic               Children's           Holier Than Thou                           50.85
+      13031 Arabic               Children's           Holier Than Thou                           32.01
+      13048 Arabic               Children's           Holier Than Thou                           43.31
+      17835 Arabic               Children's           Print More                                 33.90
+      28874 Arabic               Children's           Holier Than Thou                           52.73
+      33761 Arabic               Children's           Print More                                 33.90
+       8617 Arabic               Children's           Holier Than Thou                           41.43
+      47066 Arabic               Children's           Holier Than Thou                           54.61
+      31702 Arabic               Children's           Holier Than Thou                           37.66
+      41826 Arabic               Children's           Really Dumb Press                          33.90
+      11147 Arabic               Children's           Print More                                 24.48
+      20214 Arabic               Children's           Holier Than Thou                           39.55
+       5177 Arabic               Children's           Holier Than Thou                           45.20
+       5618 Arabic               Children's           Holier Than Thou                           48.96
+      44996 Arabic               Children's           Holier Than Thou                           41.43
+      28465 Arabic               Children's           Holier Than Thou                           30.13
+      42159 Arabic               Children's           Holier Than Thou                           45.20
+       1525 Arabic               Children's           Holier Than Thou                           47.08
+      34415 Arabic               Children's           Holier Than Thou                           47.08
+      42865 Arabic               Children's           Holier Than Thou                           39.55
+      23499 Arabic               Children's           Holier Than Thou                           37.66
+       3632 Arabic               Children's           Holier Than Thou                           52.73
+      22468 Arabic               Children's           Holier Than Thou                           45.20
+      31485 Arabic               Children's           Holier Than Thou                           48.96
+        297 Arabic               Children's           Holier Than Thou                           54.61
+      23016 Arabic               Children's           Holier Than Thou                           58.38
+      49236 Arabic               Children's           Really Dumb Press                          31.07
+      31600 Arabic               Children's           Holier Than Thou                           56.50
+      19631 Arabic               Children's           Holier Than Thou                           60.26
+      34566 Arabic               Children's           Holier Than Thou                           58.38
+      11206 Arabic               Children's           Holier Than Thou                           48.96
+      18277 Arabic               Children's           Holier Than Thou                           60.26
+       3489 Arabic               Children's           Holier Than Thou                           56.50
+      34889 Arabic               Children's           Holier Than Thou                           48.96
+      41251 Arabic               Children's           Holier Than Thou                           47.08
+      32209 Arabic               Children's           Print More                                 20.71
+      11534 Arabic               Children's           Holier Than Thou                           50.85
+      42231 Arabic               Children's           Holier Than Thou                           39.55
+      29223 Arabic               Children's           Holier Than Thou                           50.85
+      44106 Arabic               Children's           Holier Than Thou                           48.96
+      43344 Arabic               Children's           Holier Than Thou                           37.66
+       6654 Arabic               Children's           Holier Than Thou                           45.20
+      43903 Arabic               Children's           Holier Than Thou                           43.31
+      22297 Arabic               Children's           Holier Than Thou                           56.50
+      33622 Arabic               Children's           Holier Than Thou                           58.38
+       7521 Arabic               Children's           Holier Than Thou                           41.43
+      22458 Arabic               Children's           Holier Than Thou                           60.26
+      14487 Arabic               Children's           Holier Than Thou                           48.96
+      42023 Arabic               Children's           Holier Than Thou                           47.08
+      15539 Arabic               Children's           Holier Than Thou                           60.26
+       2628 Arabic               Children's           Holier Than Thou                           45.20
+      22732 Arabic               Children's           Holier Than Thou                           52.73
+      37869 Arabic               Children's           Holier Than Thou                           47.08
+      13350 Arabic               Children's           Random Books                               26.36
+       3374 Arabic               Children's           Print More                                 26.36
+      40387 Arabic               Children's           Holier Than Thou                           56.50
+      20184 Arabic               Children's           Holier Than Thou                           37.66
+      37883 Arabic               Children's           Holier Than Thou                           50.85
+      33751 Arabic               Children's           Print More                                 20.71
+      28741 Arabic               Children's           Holier Than Thou                           39.55
+      47088 Arabic               Children's           Holier Than Thou                           41.43
+      46543 Arabic               Children's           Random Books                               20.71
+      33243 Arabic               Children's           Holier Than Thou                           32.01
+      16369 Arabic               Children's           Holier Than Thou                           45.20
+      42195 Arabic               Children's           Holier Than Thou                           47.08
+       5058 Arabic               Children's           Holier Than Thou                           43.31
+      31687 Arabic               Children's           Holier Than Thou                           47.08
+      39389 Arabic               Children's           Holier Than Thou                           45.20
+      22817 Arabic               Children's           Holier Than Thou                           37.66
+      30755 Arabic               Children's           Holier Than Thou                           56.50
+      29184 Arabic               Children's           Holier Than Thou                           45.20
+      38223 Arabic               Children's           Holier Than Thou                           52.73
+      28888 Arabic               Children's           Holier Than Thou                           47.08
+      49447 Arabic               Children's           Print More                                 26.36
+      43835 Arabic               Children's           Holier Than Thou                           43.31
+       1038 Arabic               Children's           Holier Than Thou                           47.08
+      47628 Arabic               Children's           Holier Than Thou                           39.55
+       4267 Arabic               Children's           Print More                                 28.25
+      24000 Arabic               Children's           Holier Than Thou                           58.38
+       4232 Arabic               Children's           Really Dumb Press                          16.95
+      47888 Arabic               Children's           Random Books                               37.66
+      36974 Arabic               Children's           Print More                                 22.60

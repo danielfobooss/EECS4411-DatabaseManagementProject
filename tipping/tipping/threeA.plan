@@ -1,0 +1,106 @@
+DB2 Universal Database Version 11.1, 5622-044 (c) Copyright IBM Corp. 1991, 2015
+Licensed Material - Program Property of IBM
+IBM DB2 Universal Database SQL and XQUERY Explain Tool
+
+******************** DYNAMIC ***************************************
+
+==================== STATEMENT ==========================================
+
+	Isolation Level          = Cursor Stability
+	Blocking                 = Block All Cursors
+	Query Optimization Class = 5
+
+	Partition Parallel       = No
+	Intra-Partition Parallel = No
+
+	SQL Path                 = "SYSIBM", "SYSFUN", "SYSPROC", "SYSIBMADM", 
+                                   "SUNNYLEE"
+
+
+Statement:
+  
+  select B.book#, P.qnty 
+  from stl.Purchase P, stl.Book B 
+  where P.book# =B.book# and B.genre ='Travel and Adventure' 
+
+
+Section Code Page = 1208
+
+Estimated Cost = 24156.337891
+Estimated Cardinality = 266947.781250
+
+Access Table Name = STL.BOOK  ID = 2,276
+|  #Columns = 1
+|  Skip Inserted Rows
+|  Avoid Locking Committed Data
+|  Currently Committed for Cursor Stability
+|  May participate in Scan Sharing structures
+|  Scan may start anywhere and wrap, for completion
+|  Scan can be throttled in scan sharing management
+|  Relation Scan
+|  |  Prefetch: Eligible
+|  Lock Intents
+|  |  Table: Intent Share
+|  |  Row  : Next Key Share
+|  Sargable Predicate(s)
+|  |  #Predicates = 1
+Nested Loop Join
+|  Access Table Name = STL.PURCHASE  ID = 2,277
+|  |  Index Scan:  Name = STL.PURCHASE_BOOK#_INDEX  ID = 2
+|  |  |  Regular Index (Not Clustered)
+|  |  |  Index Columns:
+|  |  |  |  1: BOOK# (Ascending)
+|  |  #Columns = 1
+|  |  Skip Inserted Rows
+|  |  Avoid Locking Committed Data
+|  |  Currently Committed for Cursor Stability
+|  |  Evaluate Predicates Before Locking for Key
+|  |  #Key Columns = 1
+|  |  |  Start Key: Inclusive Value
+|  |  |  |  1: ? 
+|  |  |  Stop Key: Inclusive Value
+|  |  |  |  1: ? 
+|  |  Data Prefetch: Sequential(1), Readahead
+|  |  Index Prefetch: Sequential(1), Readahead
+|  |  Lock Intents
+|  |  |  Table: Intent Share
+|  |  |  Row  : Next Key Share
+|  |  Sargable Predicate(s)
+|  |  |  Return Data to Application
+|  |  |  |  #Columns = 2
+Return Data Completion
+
+End of section
+
+
+Optimizer Plan:
+
+              Rows   
+            Operator 
+              (ID)   
+              Cost   
+                    
+            266948  
+            RETURN  
+             ( 1)   
+            24156.3 
+              |     
+            266948  
+            NLJOIN  
+             ( 2)   
+            24156.3 
+        /--/       \--------\
+  1335                       * 
+ TBSCAN                 /---/ \
+  ( 3)           199.961       9.99804e+06 
+ 646.545         IXSCAN        Table:      
+   |              ( 5)         STL         
+ 50000           13.6306       PURCHASE    
+ Table:            |           
+ STL             46195         
+ BOOK     Index:               
+          STL                  
+          PURCHASE_BOOK#_INDEX 
+
+
+

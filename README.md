@@ -12,7 +12,7 @@ source ~db2leduc/cshrc.V11
 db2 "query"  (ex: db "select count(*) as card from stl.purchase")
 
 ### Be on the same directory as your query files and create some output.plan file:
-db2expln -d stl -o output.plan -z \; -f some_query.sql
+db2expln -d stl -o output.plan -z \; -g -f some_query.sql
 
 ## Notes:
 

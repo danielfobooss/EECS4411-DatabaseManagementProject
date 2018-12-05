@@ -1,0 +1,55 @@
+For our work we used stl3.
+
+Submitted for:
+
+Name: Sunjik Lee
+Student #: 214515142
+cse: sunnylee
+email: sunnylee@my.yorku.ca
+
+Name: Justin Tran
+Student #: 210246304
+cse: jtran47
+email: jtran47@my.yorku.ca
+
+Name: Daniel Fortunato
+Student #: 216796443
+cse: danifort
+email: Dani.fortuna97@gmail.com
+
+
+Explanation for Query variations #2:
+
+  For twoA and twoB, we changed the reduction factor between the two queries on Purchase.
+
+  For twoA, we changed the predicates on Purchase to have a large cardinality, i.e. return a large number of tuples. This results in a table scan, which makes sense, as there are no better access paths without the use of the clustered index on cust#.
+
+  For twoB, we changed the predicates on Purchase to have a much smaller cardinality, which resulted in a fetch. This one is interesting, as I'm not 100% sure what the fetch operation does. However, I am guessing that by using the index on when, it's able to obtain a much smaller amount of values due to the reduction factor. With this smaller set of tuples, it performs a self join on the rest of the table to simply obtain records that match the predicate without scanning the entire table.
+
+
+Explanation for Query variations #3:
+
+  For threeA and threeB, we made the two queries have a significantly different reduction factor.
+
+  For threeA (the query with the index nested loop join), we made sure that the inner table has an index for the probe on the join key, and have a very small number of entries returned for the outer. This ensures that the best plan would be an INLJ, as it is far cheaper to query the inner table a small number of times. This is done by joining Book and Purchase, which already has a very large difference in number of records, and have the predicate return a large number of records for Purchase and a small number of records for Book.
+
+  For threeA, we did the opposite; pick a predicate that returns a large number of records for Book. This results in a Hash Join, which makes sense; it's expensive to do a large number of index probes, and a Hash Join is the next best option, especially considering the relatively smaller size of Book compared to Purchase.
+
+
+Explanation for Query variations #4:
+
+  For fourA and fourB, since Customer and Book don't have a key to join on and there's only three distinct tables to join, we can easily make sure that the Purchase table will join either Book first or Customer first. We followed a similiar idea for #3 by changing the reduction factor of Book and Customer so that it would be cheaper to join Purchase with either Book or Customer.
+
+  For fourA, we picked a predicate for Customer to return a small number of results, while Book has a predicate that returns a large number of results. The query joins Purchase and Customer first. This makes sense, as this results in a smaller table for future operations (i.e., the join with Book).
+
+  For fourB, we simply did the opposite, making the Book have a higher reduction factor than Customer. This results in the Purchase table join the Book table first.
+
+
+Explanation for Query variations #5:
+
+  For fiveA and fiveB, we joined Book and Purchase and used groupby B.Book# along with a second groupby key. The second groupby key was changed from a value on Book to a value on Purchase. This made it very easy to change the order of aggregation to before or after the join by, again, changing the reduction factor to change the cardinality of the queries.
+
+  For fiveA, we did the groupby on Purchase table's when value, resulting in a very large number of records returned. This resulted in both tables being sorted before the join. This makes sense, as the amount of records to sort is negligible whether it's done before or after. So if the sort needs to be performed on approximately the same number of values regardless of the join, it makes sense to just sort it beforehand and do a merge sort join.
+
+  For fiveB, we did the groupby on Book table's price value. This resulted in both tables being sorted after the join. This makes sense, as the cardinality is much smaller in the end than fiveA. The sort can be performed later on a much smaller subset of the data, so it makes sense to merge it first, then sort on that smaller subset.
+

@@ -1,0 +1,133 @@
+DB2 Universal Database Version 11.1, 5622-044 (c) Copyright IBM Corp. 1991, 2015
+Licensed Material - Program Property of IBM
+IBM DB2 Universal Database SQL and XQUERY Explain Tool
+
+******************** DYNAMIC ***************************************
+
+==================== STATEMENT ==========================================
+
+	Isolation Level          = Cursor Stability
+	Blocking                 = Block All Cursors
+	Query Optimization Class = 5
+
+	Partition Parallel       = No
+	Intra-Partition Parallel = No
+
+	SQL Path                 = "SYSIBM", "SYSFUN", "SYSPROC", "SYSIBMADM", 
+                                   "SUNNYLEE"
+
+
+Statement:
+  
+  select C.cust#, B.book#, P.qnty 
+  from stl.Customer C, stl.Book B, stl.Purchase P 
+  where C.cust# =P.cust# and B.book# =P.book# and C.city ='Hamilton' 
+          and B.genre ='Travel and Adventure' 
+
+
+Section Code Page = 1208
+
+Estimated Cost = 25243.568359
+Estimated Cardinality = 61798.410156
+
+Access Table Name = STL.CUSTOMER  ID = 2,275
+|  #Columns = 1
+|  Skip Inserted Rows
+|  Avoid Locking Committed Data
+|  Currently Committed for Cursor Stability
+|  May participate in Scan Sharing structures
+|  Scan may start anywhere and wrap, for completion
+|  Fast scan, for purposes of scan sharing management
+|  Scan can be throttled in scan sharing management
+|  Relation Scan
+|  |  Prefetch: Eligible
+|  Lock Intents
+|  |  Table: Intent Share
+|  |  Row  : Next Key Share
+|  Sargable Predicate(s)
+|  |  #Predicates = 1
+|  |  Process Build Table for Hash Join
+Hash Join
+|  Early Out: Single Match Per Outer Row
+|  Estimated Build Size: 848000 
+|  Estimated Probe Size: 7520000
+|  Access Table Name = STL.BOOK  ID = 2,276
+|  |  #Columns = 1
+|  |  Skip Inserted Rows
+|  |  Avoid Locking Committed Data
+|  |  Currently Committed for Cursor Stability
+|  |  May participate in Scan Sharing structures
+|  |  Scan may start anywhere and wrap, for completion
+|  |  Scan can be throttled in scan sharing management
+|  |  Relation Scan
+|  |  |  Prefetch: Eligible
+|  |  Lock Intents
+|  |  |  Table: Intent Share
+|  |  |  Row  : Next Key Share
+|  |  Sargable Predicate(s)
+|  |  |  #Predicates = 1
+|  Nested Loop Join
+|  |  Access Table Name = STL.PURCHASE  ID = 2,277
+|  |  |  Index Scan:  Name = STL.PURCHASE_BOOK#_INDEX  ID = 2
+|  |  |  |  Regular Index (Not Clustered)
+|  |  |  |  Index Columns:
+|  |  |  |  |  1: BOOK# (Ascending)
+|  |  |  #Columns = 2
+|  |  |  Skip Inserted Rows
+|  |  |  Avoid Locking Committed Data
+|  |  |  Currently Committed for Cursor Stability
+|  |  |  Evaluate Predicates Before Locking for Key
+|  |  |  #Key Columns = 1
+|  |  |  |  Start Key: Inclusive Value
+|  |  |  |  |  1: ? 
+|  |  |  |  Stop Key: Inclusive Value
+|  |  |  |  |  1: ? 
+|  |  |  Data Prefetch: Sequential(1), Readahead
+|  |  |  Index Prefetch: Sequential(1), Readahead
+|  |  |  Lock Intents
+|  |  |  |  Table: Intent Share
+|  |  |  |  Row  : Next Key Share
+|  |  |  Sargable Predicate(s)
+|  |  |  |  Process Probe Table for Hash Join
+Return Data to Application
+|  #Columns = 3
+
+End of section
+
+
+Optimizer Plan:
+
+                               Rows   
+                             Operator 
+                               (ID)   
+                               Cost   
+                                     
+                             61798.4 
+                             RETURN  
+                              ( 1)   
+                             25243.6 
+                               |     
+                             61798.4 
+                             HSJOIN  
+                              ( 2)   
+                             25243.6 
+                   /--------/       \-------\
+            266948                            23150  
+            NLJOIN                           TBSCAN  
+             ( 3)                             ( 7)   
+            24156.3                          1074.32 
+        /--/       \--------\                  |     
+  1335                       *               100000  
+ TBSCAN                 /---/ \             Table:   
+  ( 4)           199.961       9.99804e+06  STL      
+ 646.545         IXSCAN        Table:       CUSTOMER 
+   |              ( 6)         STL         
+ 50000           13.6306       PURCHASE    
+ Table:            |           
+ STL             46195         
+ BOOK     Index:               
+          STL                  
+          PURCHASE_BOOK#_INDEX 
+
+
+
