@@ -1,0 +1,19 @@
+The following files have been submitted:
+tipping/fiveA.plan                             3619 bytes
+tipping/fiveA.sql                               116 bytes
+tipping/fiveB.plan                             3469 bytes
+tipping/fiveB.sql                               117 bytes
+tipping/fourA.plan                             3829 bytes
+tipping/fourA.sql                               178 bytes
+tipping/fourB.plan                             4367 bytes
+tipping/fourB.sql                               187 bytes
+tipping/threeA.plan                            2905 bytes
+tipping/threeA.sql                              115 bytes
+tipping/threeB.plan                            2712 bytes
+tipping/threeB.sql                              105 bytes
+tipping/twoA.plan                              1704 bytes
+tipping/twoA.sql                                 71 bytes
+tipping/twoB.plan                              2886 bytes
+tipping/twoB.sql                                 71 bytes
+tipping/one.pdf                              221034 bytes
+tipping/report.txt                             4248 bytes
